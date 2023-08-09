@@ -24,7 +24,7 @@ pipeline {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
 		    	severity: 'critical', failOnIssues: false,
-		    	additionalArguments: '--all-projects --detection-depth=4', 
+		    	additionalArguments: '--all-projects --detection-depth=4 -debug', 
 			)
             }
         }
