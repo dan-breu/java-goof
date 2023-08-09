@@ -23,9 +23,16 @@ pipeline {
             steps {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: false,
+		    	severity: 'high', failOnIssues: false, monitorProjectOnBuild: false,
 		    	additionalArguments: '--all-projects -debug', 
 			)
+/*
+		snykSecurity(
+        		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
+		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: true, <--- with true Create a project in snyk portal, Severity: only show the critical vuln.
+		    	additionalArguments: '--all-projects -debug', 
+			)
+   */
             }
         }
 
