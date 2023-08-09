@@ -1,9 +1,11 @@
-dir('subDir') {
-    checkout scm
-}
+
 
 pipeline {
     agent any
+
+    dir('subDir') {
+    checkout scm
+}
 
     stages {
         
