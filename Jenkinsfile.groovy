@@ -40,7 +40,7 @@ pipeline {
             steps {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	failOnIssues: false, failOnError: false, monitorProjectOnBuild: false,
+		    	failOnIssues: false, failOnError: false, monitorProjectOnBuild: true,
 		    	additionalArguments: '--code -debug', 
 			)
             }
