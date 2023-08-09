@@ -8,7 +8,7 @@ pipeline {
         
         stage('git clone') {
             steps {
-                git url: 'https://github.com/dan-breu/java-goof'
+                git branch: 'main', git url: 'https://github.com/dan-breu/java-goof'
             }
         }
 
