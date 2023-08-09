@@ -1,4 +1,4 @@
-
+// Sample Code to Integrate Snyk into Jenkins Pipeline
 
 pipeline {
     agent any
