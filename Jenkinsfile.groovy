@@ -22,13 +22,10 @@ pipeline {
          stage('Snyk SCA') {
             steps {
                 snykSecurity(
-                    snykInstallation: 'snyk@latest',
-                    snykTokenId: 'snyk-api-token',
-                    failOnIssues: false,
-                    monitorProjectOnBuild: true,
-                    additionalArguments: '--all-projects --d'
-                    
-                )
+        		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
+		    	severity: 'critical', failOnIssues: false,
+		    	additionalArguments: '--all-projects --detection-depth=4', 
+			)
             }
         }
 
