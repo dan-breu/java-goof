@@ -23,16 +23,26 @@ pipeline {
             steps {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	severity: 'high', failOnIssues: false, monitorProjectOnBuild: false,
+		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: true,
 		    	additionalArguments: '--all-projects -debug', 
 			)
 /*
 		snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: true, <--- with true Create a project in snyk portal, Severity: only show the critical vuln.
+		    	severity: 'high', failOnIssues: false, monitorProjectOnBuild: true, <--- with true Create a project in snyk portal, Severity: only show the high and upper vuln.
 		    	additionalArguments: '--all-projects -debug', 
 			)
    */
+            }
+        }
+
+	stage('Snyk SAST') {
+            steps {
+                snykSecurity(
+        		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
+		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: false,
+		    	additionalArguments: '--code -debug', 
+			)
             }
         }
 
