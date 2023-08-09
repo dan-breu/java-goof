@@ -29,7 +29,7 @@ pipeline {
 /*
 		snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	severity: 'high', failOnIssues: false, monitorProjectOnBuild: true, <--- with true Create a project in snyk portal, Severity: only show the high and upper vuln.
+		    	severity: 'high', failOnIssues: false, failOnError: false, monitorProjectOnBuild: true, <--- with true Create a project in snyk portal, Severity: only show the high and upper vuln.
 		    	additionalArguments: '--all-projects -debug', 
 			)
    */
