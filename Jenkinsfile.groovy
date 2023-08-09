@@ -21,7 +21,14 @@ pipeline {
 
          stage('Snyk SCA') {
             steps {
-                echo 'Building..'
+                snykSecurity(
+                    snykInstallation: 'snyk@latest',
+                    snykTokenId: 'snyk-api-token',
+                    failOnIssues: false,
+                    monitorProjectOnBuild: true,
+                    additionalArguments: '--all-projects --d'
+                    
+                )
             }
         }
 
