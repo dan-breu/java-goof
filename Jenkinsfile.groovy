@@ -13,10 +13,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                ECHO 'Building'
+                echo 'Building..'
             }
         }
 
+         stage('Snyk SCA') {
+            steps {
+                echo 'Building..'
+            }
+        }
 
 
         
