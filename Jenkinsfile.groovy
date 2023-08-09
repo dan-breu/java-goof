@@ -26,7 +26,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git url: 'https://github.com/dan-breu/java-goof.git'
+                git url: 'https://github.com/dan-breu/java-goof'
             }
         }
 
