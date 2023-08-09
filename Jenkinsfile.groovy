@@ -1,4 +1,6 @@
-
+dir('subDir') {
+    checkout scm
+}
 
 pipeline {
     agent any
