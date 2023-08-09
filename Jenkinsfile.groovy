@@ -23,7 +23,7 @@ pipeline {
             steps {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	severity: 'critical', failOnIssues: false,
+		    	severity: 'critical', failOnIssues: false, monitorProjectOnBuild: true,
 		    	additionalArguments: '--all-projects --detection-depth=4 -debug', 
 			)
             }
