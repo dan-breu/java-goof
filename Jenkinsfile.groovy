@@ -61,7 +61,7 @@ pipeline {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
 		    	failOnIssues: false, failOnError: false,monitorProjectOnBuild: true,
-		    	additionalArguments: '--container debian -debug', 
+		    	additionalArguments: '--container tomcat:8.5.21 -debug', 
 			)
             }
         }
