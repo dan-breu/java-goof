@@ -40,8 +40,28 @@ pipeline {
             steps {
                 snykSecurity(
         		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
-		    	failOnIssues: false, monitorProjectOnBuild: false,
+		    	failOnIssues: false, failOnError: false, monitorProjectOnBuild: false,
 		    	additionalArguments: '--code -debug', 
+			)
+            }
+        }
+
+	stage('Snyk IaC Scan') {
+            steps {
+                snykSecurity(
+        		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
+		    	failOnIssues: false, failOnError: false, monitorProjectOnBuild: true,
+		    	additionalArguments: '--iac --report -debug', 
+			)
+            }
+        }
+
+	stage('Snyk Container Scan') {
+            steps {
+                snykSecurity(
+        		snykInstallation: 'snyk@latest', snykTokenId: 'snyk-api-token',
+		    	failOnIssues: false, failOnError: false,monitorProjectOnBuild: true,
+		    	additionalArguments: '--container debian -debug', 
 			)
             }
         }
