@@ -3,9 +3,6 @@
 pipeline {
     agent any
 
-    dir('subDir') {
-    checkout scm
-}
 
     stages {
         
